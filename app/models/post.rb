@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
     before_save :censura 
     def censura
-        self.title = self.title.gsub!('Orbo Chile','OC')
-        self.content = self.content.gsub!('Orbo Chile','OC')
+        self.title = self.title.gsub('Orbo Chile','OC')
+        self.content = self.content.gsub('Orbo Chile','OC')
     end
 end
