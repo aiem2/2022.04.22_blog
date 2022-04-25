@@ -15,6 +15,11 @@
     </div>
     <br>
     <div class="form-group">
+        <label for="link">Link del post</label>
+        <input name="link" class="form-control" placeholder="Ingresa el link para revisar tu post">
+    </div>
+    <br>
+    <div class="form-group">
         <label for="image_url">Imagen</label>
         <input name="image_url" class="form-control" id="image_url"  placeholder="Ingresa la url de tu imagen">
     </div>
@@ -33,6 +38,7 @@
         <th>Título</th>
         <th>Contenido</th>
         <th>Imagen</th>
+        <th>Link</th>
     </tr>
     <% @posts.each do |post| %>
         <tr>
@@ -41,7 +47,8 @@
             <td><%= post.title %> </td>
             <td><%= post.content %> </td>
             <td><%= image_tag post.image_url, :type => :upload, :width => 250, :height => 250, :crop => :fill%> </td>
-    
+            <td><%= link_to post.link, post.link, target: :_blank %></td>
+             
         </tr>
     <% end %>
 </table>
